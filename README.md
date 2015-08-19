@@ -34,3 +34,14 @@ But before converting the data through pandas we are able to serialize just fine
 Investigating why, we end up comparing elements in each dict that do not serialize. They are all lists of `False`, and python thinks they are equal.
 
 Why?
+
+Perhaps it is because the two types are different:
+
+```shell
+bg_high
+bg_high fails drop
+bg_high fails solo after
+one of these two lists cannot be json serialized but they are identical according to python!?!?
+<type 'bool'>
+<type 'numpy.bool_'>
+```

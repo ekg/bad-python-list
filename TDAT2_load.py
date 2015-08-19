@@ -24,7 +24,6 @@ for key in  sorted(list(TDAT2)):
 	#print before[key]
 	del before[key]
 	del after[key]
-	json.dumps(after) ## failes
 	try:
 		json.dumps(before)     ## works
 		json.dumps(after) ## failes
@@ -46,5 +45,7 @@ for key in  sorted(list(TDAT2)):
 		#print "solo-before", key, before
 		if before == after:
 			print "one of these two lists cannot be json serialized but they are identical according to python!?!?"
+			print map(type, before)[0]
+			print map(type, after)[0]
 		else:
 			print "well at least they are different"
